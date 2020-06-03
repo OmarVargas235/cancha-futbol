@@ -1,0 +1,18 @@
+/*Contenedor titutales y cancha*/
+.contenedor-titulares {
+	background-color: rgba(0, 0, 0, .3);
+}
+
+.cancha {
+	position: relative;
+	width: 70%;
+	height: 500px;
+	background-color: #02B93F;
+	display: flex;
+}
+
+@media (max-width: 999px) {
+	.cancha {
+		width: 90%;
+	}	
+}

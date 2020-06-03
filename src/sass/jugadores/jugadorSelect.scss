@@ -1,0 +1,41 @@
+.contenedor-jugador {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 121px;
+	height: 100px;
+
+	p {
+		font-size: .8rem;
+		margin-bottom: 0;
+		background-color: rgba(0, 0, 0, .5);
+		color: white;
+		border-radius: 20px;
+		padding: 3px 10px;
+		margin-top: 3px;
+	}
+
+	.cerrar {
+		position: absolute;
+		margin: 0;
+		padding: 0;
+		background-color: #B83332;
+		color: white;
+		top: 3px;
+		right: 32px;
+		cursor: pointer;
+		transition: background-color .2s ease-in;
+		width: 20px;
+		height: 20px;
+	}
+
+	.cerrar:hover {
+		background-color: #9C1312;
+	}
+}
+
+.suplente {
+	position: relative;
+}
