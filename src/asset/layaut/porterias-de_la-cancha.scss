@@ -1,0 +1,87 @@
+/*Porteria izquierda*/
+@for $i from 6 through 8 {
+	.lineaHorizontal {
+		&:nth-child(#{$i})::before {
+			background-color: white;
+			@extend %lineas-de_la-cancha;
+			@include lineas-cancha(40%, 5%, 50px, 5px);
+
+			@if $i == 7 {  /*porteria pequeña, posta derecho*/
+				@include lineas-cancha(null, calc(50px + 5%), 5px, 105px);
+			
+			} @else if $i == 8 { /*porteria grande, posta inferior*/
+				@include lineas-cancha(70%, null, 110px, null);
+			}  
+		}
+		
+		&:nth-child(#{$i})::after { 
+			@extend %lineas-de_la-cancha;
+			@include lineas-cancha(60%, 5%, 50px, 5px);
+			background-color: white;
+
+			@if $i == 7 { /*porteria grande, posta superior*/
+				@include lineas-cancha(30%, 5%, 110px, null);
+			
+			} @else if $i == 8 { /*porteria grande, posta derecho*/
+				@include lineas-cancha(calc(50% - 100px), calc(110px + 5%), 5px, 205px);
+			}  
+		}	
+	}
+}
+
+/*media luna de la porteria izquierda*/
+
+.lineaHorizontal:nth-child(9)::before {
+	@extend %lineas-de_la-cancha;
+	@include lineas-cancha(calc(50% - 30px), calc(110px + 5%), 40px, 60px);
+	border: 5px solid white;
+	border-top-right-radius: 50%; 
+	border-bottom-right-radius: 50%; 
+}
+
+/*Porteria derecha*/
+@for $i from 10 through 12 {
+	.lineaHorizontal {
+		&:nth-child(#{$i})::before {
+			@extend %lineas-de_la-cancha;
+			@include lineas-cancha(40%, null, 50px, 5px);
+			right: 5%;
+			background-color: white;
+
+			@if $i == 11 {  /*porteria pequeña, posta izquierdo*/
+				@include lineas-cancha(null, null, 5px, 105px);
+				right: calc(50px + 5%);
+			
+			}  @else if $i == 12 { /*porteria grande, posta inferior*/
+				@include lineas-cancha(70%, null, 110px, null);
+				right: 5%;
+			}  
+		}
+		
+		&:nth-child(#{$i})::after { 
+			@extend %lineas-de_la-cancha;
+			@include lineas-cancha(60%, null, 50px, 5px);
+			background-color: white;
+			right: 5%;
+
+			@if $i == 11 { /*porteria grande, posta superior*/
+				@include lineas-cancha(30%, null, 110px, null);
+				right: 5%;
+			
+			}  @else if $i == 12 { /*porteria grande, posta izquierdo*/
+				@include lineas-cancha(calc(50% - 100px), null, 5px, 205px);
+				right: calc(110px + 5%);
+			}  
+		}	
+	}
+}
+
+/*media luna de la porteria derecha*/
+.lineaHorizontal:nth-child(13)::before {
+	@extend %lineas-de_la-cancha;
+	@include lineas-cancha(calc(50% - 30px), null, 40px, 60px);
+	border: 5px solid white;
+	right: calc(110px + 5%);
+	border-top-left-radius: 50%; 
+	border-bottom-left-radius: 50%; 
+}

@@ -1,0 +1,81 @@
+.contenedor-jugador {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	@include jugador-titular(121px, 100px);
+
+	p {
+		background-color: rgba(0, 0, 0, .5);
+		font-size: .8rem;
+		margin-bottom: 0;
+		color: white;
+		border-radius: 20px;
+		padding: 3px 10px;
+		margin-top: 3px;
+	}
+
+	.cerrar {
+		@include jugador-titular(20px, 20px);
+		margin: 0;
+		padding: 0;
+		background-color: #B83332;
+		color: white;
+		top: 3px;
+		right: 32px;
+		cursor: pointer;
+		transition: background-color .2s ease-in;
+	}
+
+	.cerrar:hover {
+		background-color: #9C1312;
+	}
+	
+	img { 
+		width: 50px;
+		height: 50px;
+		border-radius: 100%;
+	}
+}
+
+/*Jugadores titulares*/
+
+/*ubicando a los jugadors titulares en la cancha*/
+@for $i from 21 through 31 {
+	&:nth-child(#{$i}) {
+		@if $i == 21 { /*Portero*/
+			@include posicionar-jugador-en_la-cancha(calc(50% - 30px), 4%, true);
+
+		} @else if $i == 22 { /*Defensa izquierdo*/
+			@include posicionar-jugador-en_la-cancha(28%, calc(110px + 5%), true);
+		
+		} @else if $i == 23 { /*Defensa derecho*/
+			@include posicionar-jugador-en_la-cancha(55%, calc(110px + 5%), true);
+		
+		} @else if $i == 24 { /*Lateral Izquierdo*/
+			@include posicionar-jugador-en_la-cancha(7%, 32%, true);
+		
+		} @else if $i == 25 { /*Lateral Derecho*/
+			@include posicionar-jugador-en_la-cancha(75%, 32%, true);
+		
+		} @else if $i == 26 { /*Centro campista izquierdo*/
+			@include posicionar-jugador-en_la-cancha(34%, calc(50% - 60px), false);
+		
+		} @else if $i == 27 { /*Centro campista Derecho*/
+			@include posicionar-jugador-en_la-cancha(52%, calc(50% - 60px), false);
+		
+		} @else if $i == 28 { /*Delantero lateral izquierdo*/
+			@include posicionar-jugador-en_la-cancha(15%, 52%, true);
+		
+		} @else if $i == 29 { /*Delantero lateral Derecho*/
+			@include posicionar-jugador-en_la-cancha(72%, 52%, true);
+		
+		} @else if $i == 30 { /*Delantero central Derecho*/
+			@include posicionar-jugador-en_la-cancha(30%, calc(5% + 20px), false);
+		
+		} @else if $i == 31 { /*Delantero central Derecho*/
+			@include posicionar-jugador-en_la-cancha(51%, calc(102px + 5%), false);
+		
+		}
+	}
+}

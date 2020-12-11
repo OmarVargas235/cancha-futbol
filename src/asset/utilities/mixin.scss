@@ -1,0 +1,23 @@
+@mixin lineas-cancha($t, $l, $w, $h) {
+	top: $t;
+	left: $l;
+	width: $w;
+	height: $h;
+}
+
+@mixin jugador-titular($w, $h) {
+	position: absolute;
+	width: $w;
+	height: $h;
+}
+
+@mixin posicionar-jugador-en_la-cancha($t, $l_r, $isLeft) {
+	top: $t;
+
+	@if $isLeft {
+		left: $l_r;
+
+	} @else { 
+		right: $l_r;
+	}
+}

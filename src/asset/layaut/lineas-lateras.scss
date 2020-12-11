@@ -1,0 +1,29 @@
+@for $i from 1 through 2 {
+	.lineaHorizontal {
+		&:nth-child(#{$i})::before {
+			background-color: white;
+
+			@if $i == 1 {  /*franja superior*/
+				@extend %lineas-de_la-cancha;
+				@include lineas-cancha(5%, 5%, 90%, 5px);
+
+			} @else { /*franja izquierdo*/
+				@extend %lineas-de_la-cancha;
+				@include lineas-cancha(5%, 5%, 5px, 450px);
+			} 
+		}
+		
+		&:nth-child(#{$i})::after {
+			background-color: white;
+			
+			@if $i == 1 { /*franja inferior*/
+				@extend %lineas-de_la-cancha;
+				@include lineas-cancha(calc(5% + 445px), 5%, 90%, 5px);
+			
+			} @else { /*franja derecho*/
+				@extend %lineas-de_la-cancha;
+				@include lineas-cancha(5%, 95%, 5px, 450px);
+			} 
+		}
+	}
+}

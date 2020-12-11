@@ -1,0 +1,32 @@
+/*Contenedor titutales y cancha*/
+.contenedor-titulares {
+	background-color: rgba(0, 0, 0, .3);
+}
+
+.cancha {
+	position: relative;
+	width: 70%;
+	height: 500px;
+	background-color: #02B93F;
+	display: flex;
+}
+
+.lineaHorizontal {
+	height: 500px;
+	width: 5%;
+}
+
+.lineaHorizontal:nth-child(even) {
+	background-color: #03AF33;
+}
+
+@import '../layaut/lineas-lateras.scss';
+@import '../layaut/esquinas.scss';
+@import '../layaut/centro-de_la-cancha.scss';
+@import '../layaut/porterias-de_la-cancha.scss';
+
+@media (max-width: 999px) {
+	.cancha {
+		width: 90%;
+	}	
+}

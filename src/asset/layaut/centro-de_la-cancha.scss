@@ -1,0 +1,15 @@
+.lineaHorizontal { 
+	&:nth-child(5)::before { /*linea del centro*/
+		@extend %lineas-de_la-cancha;
+		@include lineas-cancha(5%, null, null, 450px);
+		right: 50%;
+		border: 2.5px solid white;
+	}
+
+	&:nth-child(5)::after { /*circulo del centro*/
+		@extend %lineas-de_la-cancha;
+		@include lineas-cancha(calc(50% - 50px), calc(50% - 50px), 100px, 100px);
+		border-radius: 50%;
+		border: 5px solid white;
+	}
+}

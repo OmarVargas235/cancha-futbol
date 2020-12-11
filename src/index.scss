@@ -9,13 +9,8 @@ body {
 	}
 }
 
-// Estilos del componente <Jugadores /> y <Suplentes />
-@import './sass/jugadores/jugadores';
-@import './sass/jugadores/jugadorSelect';
+@import './asset/utilities/mixin.scss';
+@import './asset/utilities/placeholder.scss';
 
-// Estilos del componente <Jugadores />
-@import './sass/cancha/cancha';
-@import './sass/cancha/estructuraCancha';
-
-// Estilos del componente <Titulares />
-@import './sass/titulares/titulares';
+@import './asset/views/cancha.scss';
+@import './asset/views/jugadores.scss';
