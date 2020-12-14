@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.scss';
+import './asset/index.scss';
 import App from './App';
 
 const root = document.getElementById('root');

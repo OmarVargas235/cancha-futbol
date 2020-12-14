@@ -1,0 +1,16 @@
+body {
+	min-height: 100vh;
+	background-color: #0B2031;
+}
+
+@media (min-width: 1250px) {
+	.app-contenedor {
+		padding: 0 8rem;
+	}
+}
+
+@import './utilities/mixin.scss';
+@import './utilities/placeholder.scss';
+
+@import './views/cancha.scss';
+@import './views/jugadores.scss';

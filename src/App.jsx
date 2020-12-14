@@ -1,26 +1,20 @@
 import React from 'react';
-import Jugadores from './components/Pages/Jugadores';
-import Titulares from './components/Pages/Titulares';
-import Suplentes from './components/Pages/Suplentes';
+import Jugadores from './components/jugadores/';
+import Cancha from './components/cancha/';
+import JugadoresSuplentes from './components/jugadoresSuplentes/';
 
 import JugadoresProvider from './Context/JugadoresContext';
-import TitularSuplenteContextProvider from './Context/TitularSuplenteContext';
 
-const App = () => {
+const App = () => (
+	<div className="mx-md-5 app-contenedor">
+		<h1 className="text-light my-4">OMmanager</h1>
 
-	return (
-		<div className="mx-md-5 app-contenedor">
-			<JugadoresProvider>
-				<TitularSuplenteContextProvider>
-					<h1 className="text-light my-4">OMmanager</h1>
-					<Jugadores />
-
-					<Titulares />
-					<Suplentes />
-				</TitularSuplenteContextProvider>
-			</JugadoresProvider>
-		</div>
-	)
-}
+		<JugadoresProvider>
+			<Jugadores />
+			<Cancha />
+			<JugadoresSuplentes />
+		</JugadoresProvider>
+	</div>
+)
 
 export default App;
