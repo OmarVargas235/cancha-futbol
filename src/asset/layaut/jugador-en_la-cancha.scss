@@ -42,7 +42,7 @@
 
 /*ubicando a los jugadors titulares en la cancha*/
 @for $i from 21 through 31 {
-	&:nth-child(#{$i}) {
+	.contenedor-jugador:nth-child(#{$i}) {
 		@if $i == 21 { /*Portero*/
 			@include posicionar-jugador-en_la-cancha(calc(50% - 30px), 4%, true);
 
